@@ -33,7 +33,7 @@
         "handle": "table-of-contents",
         "hasCpSettings": false,
         "hasCpSection": false,
-        "changelogUrl": "???",
+        "changelogUrl": "https://github.com/craft-snippets/craft-table-of-contents/blob/master/CHANGELOG.md",
         "class": "craftsnippets\\tableofcontents\\TableOfContents"
     }
 }
