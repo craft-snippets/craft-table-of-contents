@@ -1,0 +1,39 @@
+{
+    "name": "craftsnippets/table-of-contents",
+    "description": "This plugin generates a table of contents from HTML headers in text.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft cms",
+        "craftcms",
+        "table of contents"
+    ],
+    "support": {
+        "docs": "???",
+        "issues": "???"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Piotr Pogorzelski",
+            "homepage": "http://craftsnippets.com",
+            "email": "piotrpog@protonmail.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "craftsnippets\\tableofcontents\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Table of contents",
+        "handle": "table-of-contents",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "???",
+        "class": "craftsnippets\\tableofcontents\\TableOfContents"
+    }
+}
