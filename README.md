@@ -12,11 +12,19 @@ This plugin requires Craft CMS 3.0.0-beta.23 or later.
 
 It also requires [Anchors plugin](https://plugins.craftcms.com/anchors), since it makes use of its internal functions.
 
+## Installation
+
+You can install this plugin from the Plugin Store or with Composer. To install plugin with composer, run following command:
+
+```bash
+composer require craftsnippets/table-of-contents
+```
+
 ## Usage
 
-To use the table of contents, you need to pass HTML containing headers to `craft.toc.getLinks` function and output returned table of contents using `{% nav %}` Twig tag. 
+To create the table of contents, you need to pass HTML containing headers to `craft.toc.getLinks` function and output returned data using `{% nav %}` Twig tag. 
 
-Don't forget to also put your HTML through `anhors` filter provided by Anchors plugin - otherwise, anchor links inside the table of contents won't have anything to direct to.
+Don't forget to also put your HTML through `anhors` filter provided by Anchors plugin - it will add `id` attribute to headers, so anchor links inside the table of contents have something to direct to.
 
 Remember to use `anchors` filter **after** passing HTML to `getLinks` function. Otherwise, links in table of contents would contain also escaped HTML content of links added to the text by Anchors plugin.
 
