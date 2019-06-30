@@ -4,7 +4,7 @@ This plugin generates a table of contents from HTML headers in text. Anchor link
 
 Table of contents can be nested - nesting level will be based on header level.
 
-![Screenshot](resources/example.png)
+![Screenshot](resources/img/example.png)
 
 ## Requirements
 
