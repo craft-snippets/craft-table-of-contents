@@ -106,7 +106,6 @@ Despite animation replacing `click` event, hash will still be appended to URL an
     }
   });
 
-
   $('html, body').on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function(){
     $('html, body').stop();
   });
