@@ -14,11 +14,14 @@ It also requires [Anchors plugin](https://plugins.craftcms.com/anchors), since i
 
 ## Installation
 
-You can install this plugin from the Plugin Store or with Composer. To install plugin with composer, run following command:
+You can install this plugin from the Plugin Store or with Composer. 
+
+To install plugin with composer, run following command:
 
 ```bash
 composer require craftsnippets/table-of-contents
 ```
+Then in the control panel go to settings, plugins - and click "install" next to "table of contents".
 
 ## Usage
 
@@ -26,7 +29,7 @@ To create the table of contents, you need to pass HTML containing headers to `cr
 
 Don't forget to also put your HTML through `anhors` filter provided by Anchors plugin - it will add `id` attribute to headers, so anchor links inside the table of contents have something to direct to.
 
-Remember to use `anchors` filter **after** passing HTML to `getLinks` function. Otherwise, links in table of contents would contain also escaped HTML content of links added to the text by Anchors plugin.
+Remember to use `anchors` filter **after** passing HTML to `getLinks` function. Otherwise, links in table of contents would contain escaped HTML content of links that were added to headers by Anchors plugin.
 
 ```
 {% set text %}
@@ -50,7 +53,7 @@ some text with headers...
 
 {{text|anchors}}
 ```
-Don't forget to give your links bit of left margin to show their hierarchy.
+Don't forget to give each of your links bit of left margin to show their hierarchy.
 
 ```
 li{
@@ -85,9 +88,16 @@ Don't forget to do the same when using `anchors` filter.
 
 ## Smooth scrolling
 
-You can achieve smooth scrolling effect with a bit of jQuery code. If a user start to scroll (using mouse scroll wheel) during an animation, scrolling will be canceled to avoid "fighting" with it.
+You can achieve smooth scrolling effect with single CSS property.
 
-Despite animation replacing `click` event, hash will still be appended to URL and browser back and forward buttons will work - thanks to use of JavaScript history API.
+```
+html{
+   scroll-behavior: smooth;
+}
+```
+Unfortunetly it does not wok on Safari or IE - see more on [caniuse](https://caniuse.com/#search=scroll-behavior).
+
+Same effect that works in all modern browsers can be achieved with this jQuery code:
 
 ```
   $('.table-of-contents a').on('click', function(event) {
@@ -110,5 +120,10 @@ Despite animation replacing `click` event, hash will still be appended to URL an
     $('html, body').stop();
   });
 ```
+If a user start to scroll (using mouse scroll wheel) during an animation, scrolling will be canceled to avoid "fighting" with it.
+
+Despite animation replacing `click` event, hash will still be appended to URL and browser back or forward buttons will work - thanks to use of JavaScript history API.
+
+----
 
 Brought to you by [Piotr Pogorzelski](http://craftsnippets.com)
