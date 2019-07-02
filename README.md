@@ -38,7 +38,7 @@ Remember to use `anchors` filter **after** passing HTML to `getLinks` function. 
 some text with headers...
 {% endset %}
 
-{% table = craft.toc.getLinks(text) %}
+{% set table = craft.toc.getLinks(text) %}
 
  <ul>
     {% nav link in toc %}
