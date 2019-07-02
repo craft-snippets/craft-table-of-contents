@@ -41,7 +41,7 @@ some text with headers...
 {% set table = craft.toc.getLinks(text) %}
 
  <ul>
-    {% nav link in toc %}
+    {% nav link in table %}
         <li>
             <a href="{{ link.hash }}">{{ link.text }}</a>
             {% ifchildren %}
