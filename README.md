@@ -128,4 +128,8 @@ Despite animation replacing `click` event, hash will still be appended to URL an
 
 ----
 
+Plugin icon made by [Dave Gandy](https://www.flaticon.com/authors/dave-gandy) from [www.flaticon.com](https://www.flaticon.com/).
+
+----
+
 Brought to you by [Piotr Pogorzelski](http://craftsnippets.com)
