@@ -113,7 +113,7 @@ Same effect that works in all modern browsers can be achieved with this jQuery c
   });   
 
   window.addEventListener('popstate', function(e) {
-    if(e.state && $(e.state).length){
+    if(e.state && e.state.startsWith('#') && $(e.state).length){
       $('html, body').animate({scrollTop: $(e.state).offset().top}, 500)
     }
   });
