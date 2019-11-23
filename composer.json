@@ -2,7 +2,7 @@
     "name": "craftsnippets/table-of-contents",
     "description": "This plugin generates a table of contents from HTML headers in text.",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "craft cms",
         "craftcms",
