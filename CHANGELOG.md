@@ -6,4 +6,4 @@
 
 ## 1.0.1 - 2019-11-23
 ### Fixed
-- Bug fixed.
+- Bug with "Cannot declare class because the name is already in use" fixed.
