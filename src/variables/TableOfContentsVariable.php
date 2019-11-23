@@ -12,7 +12,7 @@ namespace craftsnippets\tableofcontents\variables;
 
 use craftsnippets\tableofcontents\models\TableOfContentsModel;
 use craft\helpers\StringHelper;
-use craft\services\Plugins;
+use Craft;
 use Exception;
 
 /**
@@ -29,7 +29,7 @@ class TableOfContentsVariable
     public function getLinks($html = null, string $tags = 'h1,h2,h3', string $language = null)
     {    
 
-        $plugins = new Plugins();
+        $plugins = Craft::$app->getPlugins();
         if(!$plugins->isPluginEnabled('anchors')){
             throw new Exception('To use Table of contents, you must install Anchors plugin');
         }
