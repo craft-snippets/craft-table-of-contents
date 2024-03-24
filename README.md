@@ -88,6 +88,27 @@ By default, Table of contents plugin searches for `h1`, `h2` and `h3` tags. Just
 
 Don't forget to do the same when using `anchors` filter.
 
+## non-ASCII characters mapping
+
+The third parameter of `getLinks()` method can be used to change non-ASCII character used to generate link hashes, just like with the anchors plugin. Here's a quote from anchors plugin documentation:
+
+>The anchors filter will convert any non-ASCII characters to ASCII, using the current site’s language’s ASCII character mappings by default.
+>If you are displaying content in a different language than the current site, use the language argument to override which ASCII character mappings should be used.
+
+Here's the example usage:
+
+```
+{% set tableOfContents = craft.toc.getLinks(html, 'h1,h2,h3', entry.site.language) %}
+```
+
+## Stripping tags from links text
+
+If headers which are converted to links contain some html tags inside them, links within table of contents will contain these tags too. You can disable this by setting fourth parameter of `getLinks()` method to `true`.
+
+```
+{% set tableOfContents = craft.toc.getLinks(html, 'h1,h2,h3', null, true) %}
+```
+
 ## Smooth scrolling
 
 You can achieve smooth scrolling effect with single CSS property.

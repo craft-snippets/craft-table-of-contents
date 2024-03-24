@@ -14,6 +14,7 @@ use craftsnippets\tableofcontents\models\TableOfContentsModel;
 use craft\helpers\StringHelper;
 use Craft;
 use Exception;
+use craft\helpers\Template;
 
 /**
  * @author    Piotr Pogorzelski
@@ -25,8 +26,7 @@ class TableOfContentsVariable
     // Public Methods
     // =========================================================================
 
-
-    public function getLinks($html = null, string $tags = 'h1,h2,h3', string $language = null)
+    public function getLinks($html = null, string $tags = 'h1,h2,h3', string $language = null, bool $stripTags = false)
     {    
 
         $plugins = Craft::$app->getPlugins();
@@ -42,7 +42,13 @@ class TableOfContentsVariable
             $links = [];
             foreach ($headers as $index => $header) {
                 $toc = new TableOfContentsModel();
-                $toc->text  = $header[3];
+                $html = $header[3];
+                if($stripTags == true){
+                    $html = strip_tags($html);
+                }
+                $html = Template::raw($html);
+
+                $toc->text  = $html;
                 $toc->id    = \craft\anchors\Plugin::getInstance()->parser->generateAnchorName($header[3], $language);
 
                 $level = array_search($header[1], $tags) + 1;
